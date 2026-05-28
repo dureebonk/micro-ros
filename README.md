@@ -46,7 +46,7 @@ docker run -it --rm -v $(pwd)/micro_ros_espidf_component:/home/ubuntu/uros_ws -v
 ```
 
 # micro-ros agent
-Open new terminal
+Open a new terminal
 
 ```bash
 # UDPv4 micro-ROS Agent
