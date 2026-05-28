@@ -37,6 +37,7 @@ docker build -t microros/esp-idf:v5.5 .
 mkdir uros_ws
 cd uros_ws
 git clone -b jazzy https://github.com/micro-ROS/micro_ros_espidf_component.git
+```
 
 ## docker run
 ```bash
