@@ -1,0 +1,44 @@
+menu "I2S STD Audio Configuration"
+
+    choice DUPLEX_MODE
+        prompt "I2S STD duplex/simplex select"
+        default USE_SIMPLEX
+        help
+            Select duplex mode or simplex mode for the example
+
+        config USE_DUPLEX
+            bool "Duplex TX and RX channels"
+            help
+                Allocate TX and RX channels on a same I2S controller in duplex mode, sharing the BCLK and WS signal
+
+        config USE_SIMPLEX
+            bool "Simplex TX and RX channels"
+            depends on !IDF_TARGET_ESP32S2
+            help
+                Allocate TX and RX channels in duplex mode, they are totally separate.
+    endchoice
+
+    config NUM_CHANNELS
+        prompt "I2S STD Number of audio channels select"
+        int
+        default 2
+        range 1 2
+        help
+            Select the number of audio channels. When selecting 1, using only left channel. 
+    
+    config NUM_SAMPLES
+        prompt "I2S STD Number of audio samples select"
+        int
+        default 2400
+        range 1600 2400
+        help
+            Select the number of audio sample buffers. 
+
+    config SAMPLE_RATE
+        prompt "I2S STD Audio sample rate select"
+        int
+        default 24000
+        range 16000 24000
+        help
+            Select the number of audio sample rate. 
+endmenu
