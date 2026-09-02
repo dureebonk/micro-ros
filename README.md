@@ -5,13 +5,14 @@
 ## make docker file
 Create Dockerfile
 ```dockerfile
-FROM espressif/idf:release-v5.5
+FROM espressif/idf:v6.0.2
 
 # 1. ESP-IDF가 제공하는 파이썬 가상환경 내부의 pip를 정확히 지칭하여 설치
-RUN /opt/esp/python_env/idf5.5_py3.12_env/bin/pip install \
+RUN /opt/esp/python_env/idf6.0.2_py3.12_env/bin/pip install \
     catkin_pkg \
     colcon-common-extensions \
     lark
+RUN git config --global --add safe.directory /opt/esp/idf/components/openthread/openthread
 
 # 2. 이후 idf.py 명령이나 micro-ROS 빌드 툴이 컨테이너 실행 시 자동 로드되도록 설정
 SHELL ["/bin/bash", "-il", "-c"]
