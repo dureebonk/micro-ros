@@ -30,7 +30,7 @@ WORKDIR /home/${USERNAME}
 ```
 ## docker build
 ```bash
-docker build -t microros/esp-idf:v5.5 .
+docker build -t microros/esp-idf:v6.0.2 .
 ```
 
 ## micro-ros-espidf-component
@@ -43,7 +43,7 @@ git clone -b jazzy https://github.com/micro-ROS/micro_ros_espidf_component.git
 ## docker run
 ```bash
 cd uros_ws
-docker run -it --rm -v $(pwd):/home/ubuntu/uros_ws -v /dev:/dev --privileged --net=host microros/esp-idf:v5.5
+docker run -it --rm -v $(pwd):/home/ubuntu/uros_ws -v /dev:/dev --privileged --net=host microros/esp-idf:v6.0.2
 ```
 
 # micro-ros agent
